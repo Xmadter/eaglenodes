@@ -1,1 +1,1 @@
-docker build -t ubuntu-22.04-with-tmate -f Dockerfile1 . && docker build -t debian-with-tmate -f Dockerfile2 .
+apk update && apk add python3 docker && pip install docker discord && git clone https://github.com/Xmadter/eaglenodes && cd eaglenodes && docker build -t ubuntu-22.04-with-tmate -f Dockerfile1 . && docker build -t debian-with-tmate -f Dockerfile2 . && python3 bot.py
