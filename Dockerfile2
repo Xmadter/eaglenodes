@@ -10,6 +10,7 @@ RUN apt-get update && \
     echo 'root:root' | chpasswd && \
     printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d && \
     apt-get install -y systemd systemd-sysv dbus dbus-user-session && \
+    export PS1="\[\033[01;31m\]┌─[\[\033[01;34m\]root@blackeagle\[\033[01;31m\]]-[\[\033[01;32m\]\w\[\033[01;31m\]]\n\[\033[01;31m\]└─[\[\033[01;32m\]vps\[\033[01;31m\]]\[\033[01;35m\]λ \[\033[00m\]" && \
     printf "systemctl start systemd-logind" >> /etc/profile
 
 CMD ["bash"]
