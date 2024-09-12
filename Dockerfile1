@@ -3,11 +3,7 @@ FROM ubuntu:22.04
 RUN apt-get update && \
     apt-get install -y tmate openssh-server openssh-client && \
     apt update && \ 
-    apt install nodejs npm python3 python3-pip git neofetch curl nano wget -y && \
-    neofetch && git clone https://github.com/cmaster324-cell/344 && \
-    cd 344 && \
-    npm install hpack && \
-    npm install user-agents && \
+    apt install python3 python3-pip git neofetch curl nano wget -y && \
     sed -i 's/^#\?\s*PermitRootLogin\s\+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     echo 'root:root' | chpasswd && \
     printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d && \
